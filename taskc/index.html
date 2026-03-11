@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day03 SPA</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+}
+
+nav{
+background:#333;
+padding:10px;
+}
+
+nav button{
+background:none;
+border:none;
+color:white;
+font-size:16px;
+margin-right:20px;
+cursor:pointer;
+}
+
+.section{
+display:none;
+padding:20px;
+}
+
+.active{
+display:block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('about')">About</button>
+<button onclick="showPage('register')">Register</button>
+</nav>
+
+<div id="home" class="section active">
+<h2>Home</h2>
+<p>Welcome to my Single Page Web Application.</p>
+</div>
+
+<div id="about" class="section">
+<h2>About</h2>
+<p>This SPA switches pages without reloading.</p>
+</div>
+
+<div id="register" class="section">
+
+<h2>Registration</h2>
+
+<form>
+
+<input type="text" placeholder="Name"><br><br>
+<input type="email" placeholder="Email"><br><br>
+<input type="password" placeholder="Password"><br><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+<script>
+
+function showPage(page){
+
+let sections=document.querySelectorAll(".section")
+
+sections.forEach(sec=>{
+sec.classList.remove("active")
+})
+
+document.getElementById(page).classList.add("active")
+
+}
+
+</script>
+
+</body>
+</html>
